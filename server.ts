@@ -256,7 +256,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
   app.use(express.static(path.resolve('frontend/dist/frontend')))
-  app.use(cookieParser('kekse'))
+  app.use(cookieParser('test'))
   // vuln-code-snippet end directoryListingChallenge accessLogDisclosureChallenge
 
   /* Configure and enable backend-side i18n */
@@ -299,6 +299,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
     max_logs: '2d'
   })
   app.use(morgan('combined', { stream: accessLogStream }))
+  app.use(cookieParser('testrandom'))
 
   // vuln-code-snippet start resetPasswordMortyChallenge
   /* Rate limiting */
