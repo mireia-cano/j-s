@@ -299,6 +299,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
     max_logs: '2d'
   })
   app.use(morgan('combined', { stream: accessLogStream }))
+  app.use(cookieParser('testrandom'))
 
   // vuln-code-snippet start resetPasswordMortyChallenge
   /* Rate limiting */
